@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes | Scholar Sphere</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="styles-notes.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="loader.css">
+
+    <!-- Bootstrap files -->
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script> -->
+
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+</head>
+<body onload="typeWriterNotes();displayContent();">
+    <%- include('navbar', {isLogin: isLogin}); %>
+    <%- include('social'); %>
+    <%- include('loader'); %>
+    <div class="navbar-padding" style="height: 8em"></div>
+    <!-- <h1 style="padding-left: 4.5%">Notes</h1> -->
+    <!-- <h2>Courses</h2> -->
+
+    <div class="qp-content">
+      <div class="notes-hero">
+          <h2 id="notes-hero-title"></h2>
+          <p id="notes-caption"></p>
+          <img src="images/home-notes.png" alt="notes" id="calc-img">
+      </div>
+  </div>
+
+
+
+    <input
+        type="text"
+        id="myInput"
+        onkeyup="myFunction()"
+        placeholder="Enter the Course Name"
+        title="Type the Course Name"
+    />
+
+    <!-- <div class="box">
+        <div class="container-2">
+            <span class="icon">
+                <i class="fa fa-search"></i>
+                <input type="text" id="myInput" class="search" placeholder="Search for courses..." onkeyup="myFunction()" autocomplete="off" title="Type a course name" />
+            </span>
+        </div>
+    </div> -->
+
+    <ul id="myUL">
+        <li><button onclick="window.open('/notes/engineering-chemistry', '_self');"><a>Engineering Chemistry</a></button></li>
+        <li><button onclick="window.open('/notes/computer-programming-python', '_self');"><a>Computer Programming: Python</a></button></li>
+
+        <li><button onclick="window.open('/notes/basic-electrical-engineering', '_self');"><a>Basic Electrical Engineering</a></button></li>
+        <li><button  onclick="window.open('/notes/calculus', '_self');"><a>Calculus</a></button></li>
+
+        <li><button onclick="window.open('/notes/structured-and-objected-oriented-programming', '_self');"><a>Structured and Object Oriented Programming</a></button></li>
+        <li><button onclick="window.open('/notes/basic-electronics', '_self');"><a>Basic Electronics</a></button></li>
+        <li><button onclick="window.open('/notes/technical-english-communication', '_self');"><a>Technical English Communication</a></button></li>
+        <li><button onclick="window.open('/notes/ethics-and-values', '_self');"><a>Ethics and Values</a></button></li>
+        <li><button onclick="window.open('/notes/differential-equations-and-transforms', '_self');"><a>Differential Equations And Transforms</a></button></li>
+        <li><button onclick="window.open('/notes/engineering-physics', '_self');"><a>Engineering Physics</a></button></li>
+        <li><button onclick="window.open('/notes/quantitative-skills', '_self');"><a>Quantitative Skills</a></button></li>
+        <li><button onclick="window.open('/notes/computer-programming-java', '_self');"><a>Computer Programming: Java</a></button></li>
+        <li><button onclick="window.open('/notes/data-structures-and-algorithms', '_self');"><a>Data Structures and Algorithms</a></button></li>
+        <li><button onclick="window.open('/notes/digital-systems-design', '_self');"><a>Digital Systems Design</a></button></li>
+        <li><button onclick="window.open('/notes/complex-variables-and-linear-algebra', '_self');"><a>Complex Variables and Linear Algebra</a></button></li>
+        <li><button onclick="window.open('/notes/probability-and-statistics', '_self');"><a>Probability and Statistics</a></button></li>
+        <li><button onclick="window.open('/notes/engineering-chemistry', '_self');"><a></a></button></li>
+    </ul>
+
+    <!-- <ul id="myUL">
+        <div class="column">
+          <li><button  onclick="window.open('/module-page', '_blank');"><a>Enginneering Chemistry</a></button></li>
+          <li><button  onclick="window.open('/module-page', '_blank');"><a>Computer Programming Python</a></button></li>
+          <li><button  onclick="window.open('/module-page', '_blank');"><a>Digital System Design</a></button></li>
+        </div>
+        <div class="column">
+          <li><button  onclick="window.open('/module-page', '_blank');"><a>Basic Electrical Enginneering</a></button></li>
+          <li><button  onclick="window.open('/module-page', '_blank');"><a>Calculus</a></button></li>
+          <li><button  onclick="window.open('/module-page', '_blank');"><a>Complex Variable and Linear Algebra</a></button></li>
+        </div>
+        <div class="column">
+          <li><button  onclick="window.open('/module-page', '_blank');"><a>Technical English Communication</a></button></li>
+          <li><button  onclick="window.open('/module-page', '_blank');"><a>Enthics and Values</a></button></li>
+          <li><button  onclick="window.open('/module-page', '_blank');"><a>Probability and Statistics</a></button></li>
+        </div>
+        <div class="column">
+          <li><button  onclick="window.open('/module-page', '_blank');"><a>Differential Equation And Transforms</a></button></li>
+          <li><button  onclick="window.open('/module-page', '_blank');"><a>Enginneering Physics</a></button></li>
+          <li><button  onclick="window.open('/module-page', '_blank');"><a>Quantitative Skills</a></button></li>
+        </div>
+        <div class="column">
+            <li><button  onclick="window.open('/module-page', '_blank');"><a>Structured and Object Oriented Programming</a></button></li>
+            <li><button  onclick="window.open('/module-page', '_blank');"><a>Basic Electronics</a></button></li>
+            <li><button  onclick="window.open('/module-page', '_blank');"><a></a></button></li>
+        </div>
+        <div class="column">
+          <li><button  onclick="window.open('/module-page', '_blank');"><a>Computer Programming Java</a></button></li>
+          <li><button  onclick="window.open('/module-page', '_blank');"><a>Data Structure and Algorithm</a></button></li>
+        </div>
+      
+      </ul> -->
+
+    <%- include('footer'); %>
+
+    <script src="gradcal.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "### Instructions: - Open the terminal in a folder to store the project - Run ```git clone https://github.com/Priyanshu1011/Scholar-Sphere.git``` - In the terminal, go to the folder containing **package.json** - Run ```npm install``` to install all node modules",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Priyanshu Pattanaik",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "lodash": "^4.17.21",
+    "mongoose": "^7.0.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Priyanshu1011/Scholar-Sphere.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Priyanshu1011/Scholar-Sphere/issues"
+  },
+  "homepage": "https://github.com/Priyanshu1011/Scholar-Sphere#readme"
+}

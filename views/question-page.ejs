@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions Page | Scholar Sphere</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/styles-module-page.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/loader.css">
+
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    <%- include('navbar', {isLogin: isLogin}); %>
+    <%- include('social'); %>   
+    <div class="navbar-padding" style="height: 8em;"></div>
+    <h1 id="pg-heading">
+        Question Papers</h1>
+    <h2 id="course-heading"><%= courseLodash %></h2>
+    
+    <ul id="module">
+        <li>
+            <label for="first" class="module-heading">CAT - 1<i class="fa fa-chevron-down" aria-hidden="true"></i></label>
+            <input type="checkbox" name="module" id="first">
+            <div class="module-page-content">
+                <!-- <button class="display-button">
+                    <a href="https://www.google.com/" target="_blank">Open in Google Drive</a>
+                </button> -->
+                <a href="https://drive.google.com/drive/my-drive" target="_blank">
+                    <button class="display-button">
+                        <span>Open in Google Drive</span>
+                    </button>
+                </a>
+            </div>
+        </li>
+        <li>
+            <label for="second" class="module-heading">CAT - 2<i class="fa fa-chevron-down" aria-hidden="true"></i></label>
+            <input type="checkbox" name="module" id="second">
+            <div class="module-page-content">
+                <!-- <button class="display-button">
+                    <span>Open in Drive</span>
+                </button> -->
+                <a href="https://www.google.com/" target="_blank">
+                    <button class="display-button">
+                        <span>Open in Google Drive</span>
+                    </button>
+                </a>
+            </div>
+        </li>
+        <li>
+            <label for="third" class="module-heading">FAT<i class="fa fa-chevron-down" aria-hidden="true"></i></label>
+            <input type="checkbox" name="module" id="third">
+            <div class="module-page-content">
+                <!-- <button class="display-button">
+                    <span>Open in Drive</span>
+                </button> -->
+                <a href="https://www.google.com/" target="_blank">
+                    <button class="display-button">
+                        <span>Open in Google Drive</span>
+                    </button>
+                </a>
+            </div>
+        </li>
+    </ul>
+    <%- include('footer'); %>
+</body>
+</html>

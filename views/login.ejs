@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Scholar Sphere</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="styles-module-page.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="loader.css">
+
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body onload="displayContent();">
+    <%- include('navbar', {isLogin: isLogin}); %>
+    <%- include('social'); %>
+    <%- include('loader'); %>
+    <div class="navbar-padding" style="height: 8em"></div>
+    
+    <div class="login-form">
+      <div class="form-btn">
+          <span onclick="login()">Login</span>
+          <span onclick="register()">Register</span>
+          <hr id="Indicator">
+      </div>
+
+      <form id="loginForm" method="POST" action="/login">
+        <input type="text" placeholder="Username" name="username">
+        <input type="password" placeholder="Password" name="password">
+        <button type="submit" class="btn">Login</button>
+        <!-- <a href="">Forgot password?</a> -->
+      </form>
+
+      <form id="regForm" method="POST" action="/register">
+        <input type="text" placeholder="Name" name="name">
+        <input type="email" placeholder="Email" name="email">
+        <input type="text" placeholder="Username" name="username">
+        <input type="password" placeholder="Password" name="password">
+        <button type="submit" class="btn">Register</button>
+        <!-- <a href="">Forgot password?</a> -->
+      </form>
+
+
+      </div>
+
+    <%- include('footer'); %>
+
+    <script src="gradcal.js"></script>
+    <script>
+      let LoginForm = document.getElementById("loginForm")
+      let RegForm = document.getElementById("regForm")
+      let Indicator = document.getElementById("Indicator")
+
+      function register(){
+        RegForm.style.transform = "translateX(-18.7rem)";
+        LoginForm.style.transform = "translateX(-18.7rem)";
+        Indicator.style.transform = "translateX(6.56rem)";
+      }
+      function login(){
+        RegForm.style.transform = "translateX(0)";
+        LoginForm.style.transform = "translateX(0)";
+        Indicator.style.transform = "translateX(0)";
+      }
+    </script>
+</body>
+</html>

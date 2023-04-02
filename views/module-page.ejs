@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes | Scholar Sphere</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/styles-module-page.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/loader.css">
+
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <%- include('navbar', {isLogin: isLogin}); %>
+    <%- include('social'); %>
+    <div class="navbar-padding" style="height: 8em;"></div>
+    <!-- <h1 style="padding-left: 4.5%;">Module Page</h1> -->
+    <h1 id="pg-heading">
+        Notes</h1>
+    <h2 id="course-heading"><%= courseLodash %></h2>
+    <ul id="module">
+        <li>
+            <label for="first" class="module-heading">Module 1<span>&#x3e</span></label>
+            <input type="checkbox" name="module" id="first">
+            <div class="module-page-content">
+                <a href="/<%= courseName %>" target="_blank">
+                    <button class="display-button">
+                        <span>Open in Drive</span>
+                    </button>
+                </a>
+                <button class="display-button">
+                    <span>Open in Youtube</span>
+                </button>
+            </div>
+        </li>
+        <li>
+            <label for="second" class="module-heading">Module 2<span>&#x3e</span></label>
+            <input type="checkbox" name="module" id="second">
+            <div class="module-page-content">
+                <button class="display-button">
+                    <span>Open in Drive</span>
+                </button>
+                <button class="display-button">
+                    <span>Open in Youtube</span>
+                </button>
+            </div>
+        </li>
+        <li>
+            <label for="third" class="module-heading">Module 3<span>&#x3e</span></label>
+            <input type="checkbox" name="module" id="third">
+            <div class="module-page-content">
+                <button class="display-button">
+                    <span>Open in Drive</span>
+                </button>
+                <button class="display-button">
+                    <span>Open in Youtube</span>
+                </button>
+            </div>
+        </li>
+        <li>
+            <label for="fourth" class="module-heading">Module 4<span>&#x3e</span></label>
+            <input type="checkbox" name="module" id="fourth">
+            <div class="module-page-content">
+                <button class="display-button">
+                    <span>Open in Drive</span>
+                </button>
+                <button class="display-button">
+                    <span>Open in Youtube</span>
+                </button>
+            </div>
+        </li>
+        <li>
+            <label for="fifth" class="module-heading">Module 5<span>&#x3e</span></label>
+            <input type="checkbox" name="module" id="fifth">
+            <div class="module-page-content">
+                <button class="display-button">
+                    <span>Open in Drive</span>
+                </button>
+                <button class="display-button">
+                    <span>Open in Youtube</span>
+                </button>
+            </div>
+        </li>
+        <li>
+            <label for="sixth" class="module-heading">Module 6<span>&#x3e</span></label>
+            <input type="checkbox" name="module" id="sixth">
+            <div class="module-page-content">
+                <button class="display-button">
+                    <span>Open in Drive</span>
+                </button>
+                <button class="display-button">
+                    <span>Open in Youtube</span>
+                </button>
+            </div>
+        </li>
+        <li>
+            <label for="seventh" class="module-heading">Module 7<span>&#x3e</span></label>
+            <input type="checkbox" name="module" id="seventh">
+            <div class="module-page-content">
+                <button class="display-button">
+                    <span>Open in Drive</span>
+                </button>
+                <button class="display-button">
+                    <span>Open in Youtube</span>
+                </button>
+            </div>
+        </li>
+    </ul>
+    <%- include('footer'); %>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<nav class="navbar" id="navbar">
+    <div class="navbar-container nav-container">
+        <input type="checkbox" name="" id="">
+        <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </div>
+        <div class="logo" id="logo">
+            <a href="/">
+                <img src="/images/logo.png" alt="Logo" id="logo-img">
+            </a>
+        </div>
+        <ul class="menu-items">
+            <li id="notes-nav-item"><a href="/notes">Notes</a></li>
+            <li id="question-papers-nav-item"><a href="/question-papers">Question Papers</a></li>
+            <li id="gradcal-nav-item"><a href="/gradcal">Grade Calculators</a></li>
+            <li id="login-nav-item"><a href="https://forms.gle/W7jLAjAExJJWfodZ7" target="_blank">Printing</a></li>
+            <% if (isLogin === false ) {%>
+                <li id="login-nav-item"><a href="/login">Login</a></li>
+            <% } else {%>
+                <li id="login-nav-item"><a href="/logout">Logout</a></li>
+            <% } %>
+        </ul>
+        </div>
+    </div>
+</nav>

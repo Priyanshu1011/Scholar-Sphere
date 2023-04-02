@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-gradcal.css">
+    <link rel="stylesheet" href="navbar.css">
+
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <%- include('navbar', {isLogin: isLogin}); %>
+    <div class="navbar-padding" style="height: 8em;"></div>
+    <div class="grad-cal-content">
+        <div class="pop-up open-popup" id="pop-up">
+            <!-- GPA Calculator -->
+            <div class="visible" id="calc-1-popup">
+                <h2 class="popup-title">GPA Calculator</h2>
+                <form action="/calc-1" method="POST">
+                    <table>
+                        <tr>
+                            <th>Credits</th>
+                            <th>Grade</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                
+                                <select name="credits1" id="credits1">
+                                    <option value="0">Select credits</option>
+                                    <option value="1">1 credit</option>
+                                    <option value="2">2 credits</option>
+                                    <option value="3">3 credits</option>
+                                    <option value="4">4 credits</option>
+                                </select>
+                            </td>
+                            <td>
+                                
+                                <select name="grade1" id="grade1">
+                                    <option value="0">Select grade</option>
+                                    <option value="10">S</option>
+                                    <option value="9">A</option>
+                                    <option value="8">B</option>
+                                    <option value="7">C</option>
+                                    <option value="6">D</option>
+                                    <option value="5">E</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- 2nd row -->
+                        <tr>
+                            <td>
+                                
+                                <select name="credits2" id="credits2">
+                                    <option value="0">Select credits</option>
+                                    <option value="1">1 credit</option>
+                                    <option value="2">2 credits</option>
+                                    <option value="3">3 credits</option>
+                                    <option value="4">4 credits</option>
+                                </select>
+                            </td>
+                            <td>
+                                
+                                <select name="grade2" id="grade2">
+                                    <option value="0">Select grade</option>
+                                    <option value="10">S</option>
+                                    <option value="9">A</option>
+                                    <option value="8">B</option>
+                                    <option value="7">C</option>
+                                    <option value="6">D</option>
+                                    <option value="5">E</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- 3rd row -->
+                        <tr>
+                            <td>
+                            
+                                <select name="credits3" id="credits3">
+                                    <option value="0">Select credits</option>
+                                    <option value="1">1 credit</option>
+                                    <option value="2">2 credits</option>
+                                    <option value="3">3 credits</option>
+                                    <option value="4">4 credits</option>
+                                </select>
+                            </td>
+                            <td>
+                            
+                                <select name="grade3" id="grade3">
+                                    <option value="0">Select grade</option>
+                                    <option value="10">S</option>
+                                    <option value="9">A</option>
+                                    <option value="8">B</option>
+                                    <option value="7">C</option>
+                                    <option value="6">D</option>
+                                    <option value="5">E</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- 4th row -->
+                        <tr>
+                            <td>
+                            
+                                <select name="credits4" id="credits4">
+                                    <option value="0">Select credits</option>
+                                    <option value="1">1 credit</option>
+                                    <option value="2">2 credits</option>
+                                    <option value="3">3 credits</option>
+                                    <option value="4">4 credits</option>
+                                </select>
+                            </td>
+                            <td>
+                            
+                                <select name="grade4" id="grade4">
+                                    <option value="0">Select grade</option>
+                                    <option value="10">S</option>
+                                    <option value="9">A</option>
+                                    <option value="8">B</option>
+                                    <option value="7">C</option>
+                                    <option value="6">D</option>
+                                    <option value="5">E</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- 5th row -->
+                        <tr>
+                            <td>
+                            
+                                <select name="credits5" id="credits5">
+                                    <option value="0">Select credits</option>
+                                    <option value="1">1 credit</option>
+                                    <option value="2">2 credits</option>
+                                    <option value="3">3 credits</option>
+                                    <option value="4">4 credits</option>
+                                </select>
+                            </td>
+                            <td>
+                            
+                                <select name="grade5" id="grade5">
+                                    <option value="0">Select grade</option>
+                                    <option value="10">S</option>
+                                    <option value="9">A</option>
+                                    <option value="8">B</option>
+                                    <option value="7">C</option>
+                                    <option value="6">D</option>
+                                    <option value="5">E</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- 6th row -->
+                        <tr>
+                            <td>
+                            
+                                <select name="credits6" id="credits6">
+                                    <option value="0">Select credits</option>
+                                    <option value="1">1 credit</option>
+                                    <option value="2">2 credits</option>
+                                    <option value="3">3 credits</option>
+                                    <option value="4">4 credits</option>
+                                </select>
+                            </td>
+                            <td>
+                            
+                                <select name="grade6" id="grade6">
+                                    <option value="0">Select grade</option>
+                                    <option value="10">S</option>
+                                    <option value="9">A</option>
+                                    <option value="8">B</option>
+                                    <option value="7">C</option>
+                                    <option value="6">D</option>
+                                    <option value="5">E</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- 7th row -->
+                        <tr>
+                            <td>
+                            
+                                <select name="credits7" id="credits7">
+                                    <option value="0">Select credits</option>
+                                    <option value="1">1 credit</option>
+                                    <option value="2">2 credits</option>
+                                    <option value="3">3 credits</option>
+                                    <option value="4">4 credits</option>
+                                </select>
+                            </td>
+                            <td>
+                            
+                                <select name="grade7" id="grade7">
+                                    <option value="0">Select grade</option>
+                                    <option value="10">S</option>
+                                    <option value="9">A</option>
+                                    <option value="8">B</option>
+                                    <option value="7">C</option>
+                                    <option value="6">D</option>
+                                    <option value="5">E</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- 8th row -->
+                        <tr>
+                            <td>
+                            
+                                <select name="credits8" id="credits8">
+                                    <option value="0">Select credits</option>
+                                    <option value="1">1 credit</option>
+                                    <option value="2">2 credits</option>
+                                    <option value="3">3 credits</option>
+                                    <option value="4">4 credits</option>
+                                </select>
+                            </td>
+                            <td>
+                            
+                                <select name="grade8" id="grade8">
+                                    <option value="0">Select grade</option>
+                                    <option value="10">S</option>
+                                    <option value="9">A</option>
+                                    <option value="8">B</option>
+                                    <option value="7">C</option>
+                                    <option value="6">D</option>
+                                    <option value="5">E</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- 9th row -->
+                        <tr>
+                            <td>
+                            
+                                <select name="credits9" id="credits9">
+                                    <option value="0">Select credits</option>
+                                    <option value="1">1 credit</option>
+                                    <option value="2">2 credits</option>
+                                    <option value="3">3 credits</option>
+                                    <option value="4">4 credits</option>
+                                </select>
+                            </td>
+                            <td>
+                            
+                                <select name="grade9" id="grade9">
+                                    <option value="0">Select grade</option>
+                                    <option value="10">S</option>
+                                    <option value="9">A</option>
+                                    <option value="8">B</option>
+                                    <option value="7">C</option>
+                                    <option value="6">D</option>
+                                    <option value="5">E</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- 10th row -->
+                        <tr>
+                            <td>
+                            
+                                <select name="credits10" id="credits10">
+                                    <option value="0">Select credits</option>
+                                    <option value="1">1 credit</option>
+                                    <option value="2">2 credits</option>
+                                    <option value="3">3 credits</option>
+                                    <option value="4">4 credits</option>
+                                </select>
+                            </td>
+                            <td>
+                            
+                                <select name="grade10" id="grade10">
+                                    <option value="0">Select grade</option>
+                                    <option value="10">S</option>
+                                    <option value="9">A</option>
+                                    <option value="8">B</option>
+                                    <option value="7">C</option>
+                                    <option value="6">D</option>
+                                    <option value="5">E</option>
+                                </select>
+                            </td>
+                        </tr>
+    
+                        <!-- 11th row -->
+                        
+                        <tr>
+                            <td>
+                            
+                                <select name="credits11" id="credits11">
+                                    <option value="0">Select credits</option>
+                                    <option value="1">1 credit</option>
+                                    <option value="2">2 credits</option>
+                                    <option value="3">3 credits</option>
+                                    <option value="4">4 credits</option>
+                                </select>
+                            </td>
+                            <td>
+                            
+                                <select name="grade11" id="grade11">
+                                    <option value="0">Select grade</option>
+                                    <option value="10">S</option>
+                                    <option value="9">A</option>
+                                    <option value="8">B</option>
+                                    <option value="7">C</option>
+                                    <option value="6">D</option>
+                                    <option value="5">E</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- 12th row -->
+                        <tr>
+                            <td>
+                            
+                                <select name="credits12" id="credits12">
+                                    <option value="0">Select credits</option>
+                                    <option value="1">1 credit</option>
+                                    <option value="2">2 credits</option>
+                                    <option value="3">3 credits</option>
+                                    <option value="4">4 credits</option>
+                                </select>
+                            </td>
+                            <td>
+                            
+                                <select name="grade12" id="grade12">
+                                    <option value="0">Select grade</option>
+                                    <option value="10">S</option>
+                                    <option value="9">A</option>
+                                    <option value="8">B</option>
+                                    <option value="7">C</option>
+                                    <option value="6">D</option>
+                                    <option value="5">E</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- 13th row -->
+                        <tr>
+                            <td>
+                            
+                                <select name="credits13" id="credits13">
+                                    <option value="0">Select credits</option>
+                                    <option value="1">1 credit</option>
+                                    <option value="2">2 credits</option>
+                                    <option value="3">3 credits</option>
+                                    <option value="4">4 credits</option>
+                                </select>
+                            </td>
+                            <td>
+                            
+                                <select name="grade13" id="grade13">
+                                    <option value="0">Select grade</option>
+                                    <option value="10">S</option>
+                                    <option value="9">A</option>
+                                    <option value="8">B</option>
+                                    <option value="7">C</option>
+                                    <option value="6">D</option>
+                                    <option value="5">E</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- 14th row -->
+                        <tr>
+                            <td>
+                                
+                                <select name="credits14" id="credits14">
+                                    <option value="0">Select credits</option>
+                                    <option value="1">1 credit</option>
+                                    <option value="2">2 credits</option>
+                                    <option value="3">3 credits</option>
+                                    <option value="4">4 credits</option>
+                                </select>
+                            </td>
+                            <td>
+                                
+                                <select name="grade14" id="grade14">
+                                    <option value="0">Select grade</option>
+                                    <option value="10">S</option>
+                                    <option value="9">A</option>
+                                    <option value="8">B</option>
+                                    <option value="7">C</option>
+                                    <option value="6">D</option>
+                                    <option value="5">E</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- 15th row -->
+                        <tr>
+                            <td>
+                                
+                                <select name="credits15" id="credits15">
+                                    <option value="0">Select credits</option>
+                                    <option value="1">1 credit</option>
+                                    <option value="2">2 credits</option>
+                                    <option value="3">3 credits</option>
+                                    <option value="4">4 credits</option>
+                                </select>
+                            </td>
+                            <td>
+                                
+                                <select name="grade15" id="grade15">
+                                    <option value="0">Select grade</option>
+                                    <option value="10">S</option>
+                                    <option value="9">A</option>
+                                    <option value="8">B</option>
+                                    <option value="7">C</option>
+                                    <option value="6">D</option>
+                                    <option value="5">E</option>
+                                </select>
+                            </td>
+                        </tr>
+    
+                    </table>
+                    <input type="submit" class="submit" value="submit" onclick="showOutput()">
+                    <div id="display-output" class="displayed-output">
+                        <h3>Your GPA = <%= output %> !</h3>
+                    </div>
+                </form>
+            </div>
+            <!-- CGPA Calculator -->
+            <div class="hidden" id="calc-2-popup">
+    
+            </div>
+            <!-- 'X' Pointer -->
+            <div class="hidden" id="calc-3-popup">
+    
+            </div>
+            <form action="/gradcal" method="post">
+                <button type="submit" onclick="closePopup()" class="close-button"><i class="fa fa-2x fa-times" aria-hidden="true"></i></button>
+            </form>
+            
+        </div> <!-- End of div.pop-up -->
+        <!-- <h1 id="gradcal-title">Grade Calculator</h1> -->
+        <div class="gradcal-hero-wo-anim" style="opacity: 1;">
+            <h2 id="gradcal-hero-title">Welcome to Grade Calculators!</h2>
+            <p id="gradcal-caption">Get your grades calculated with ease. All in one place!</p>
+            <img src="images/calculator.png" alt="student & calc" id="calc-img-wo-anim">
+        </div>
+        <div class="calc-1-description calc-description left-to-right reveal activeLR">
+            <h3 class="calc-desc-heading">GPA Calculator</h3>
+            <p id="calc-1-subcaption">Check your GPA. All we need is the credits and grade for each course.</p>
+            <button type="submit" class="display-button" id="1" onclick="openPopup(this.id)">Check your GPA</button>
+        </div>
+        <div class="calc-2-description calc-description reveal right-to-left activeRL">
+            <h3 class="calc-desc-heading">CGPA Calculator</h3>
+            <p id="calc-2-subcaption">Get to know your CGPA. Just enter the credits & GPA for this semester and the previous one.</p>
+            <button type="submit" class="display-button" id="2" onclick="openPopup(this.id)">Check your CGPA</button>
+        </div>
+        <div class="calc-3-description calc-description reveal left-to-right activeLR">
+            <h3 class="calc-desc-heading">X Pointer</h3>
+            <p id="calc-3-subcaption">Want to know what GPA you need to get to become an 'X' Pointer? Check this out...</p>
+            <button type="submit" class="display-button" id="3" onclick="openPopup(this.id)">Check to become 'X' Pointer</button>
+        </div>
+        <div class="dummy-footer" style="height: 150px;text-align: center;">FOOTER</div>
+    </div>
+    
+
+    <script src="gradcal.js"></script>
+</body>
+</html>

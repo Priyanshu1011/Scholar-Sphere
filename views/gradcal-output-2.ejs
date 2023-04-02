@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-gradcal.css">
+    <link rel="stylesheet" href="navbar.css">
+
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <%- include('navbar', {isLogin: isLogin}); %>
+    <div class="navbar-padding" style="height: 8em;"></div>
+    <div class="grad-cal-content">
+        <div class="pop-up open-popup 2" id="pop-up">
+            <!-- GPA Calculator -->
+            <div class="hidden" id="calc-1-popup">
+                
+            </div>
+            <!-- CGPA Calculator -->
+            <div class="visible" id="calc-2-popup">
+                <h2 class="popup-title">CGPA Calculator</h2>
+    
+                <form action="/calc-2" method="POST">
+                    <table>
+                        <tr>
+                            <td>
+                                <label>Current GPA</label>
+                            </td>
+                            <td>
+                                <input type="number" placeholder="Current GPA" step=".01" name="calc2CurrGPA" id="calc2CurrGPA">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Current semester credits</label>
+                            </td>
+                            <td>
+                                <input type="number" placeholder="Current semester credits" step=".5" name="calc2CurrCreds" id="calc2CurrCreds">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>CGPA before this semester</label>
+                            </td>
+                            <td>
+                                <input type="number" placeholder="CGPA before this semester" step=".01" name="calc2PrevGPA" id="calc2PrevGPA">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Credits finished before this semester</label>
+                            </td>
+                            <td>
+                                <input type="number" placeholder="Credits finished before this semester" step=".5" size="30" name="calc2PrevCreds" id="calc2PrevCreds">
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="submit" class="submit" value="submit">
+                    <div id="display-output" class="displayed-output">
+                        <% if(output < 0){ %>
+                            <h3>Hmmm... Negative CGPA</h3>
+                            <h3>Something's fishy 🤔</h3>
+                        <% } else if(output > 10){ %>
+                            <h3>Whoa! 10+ CGPA 😱</h3>
+                            <h3>Looks like you're a genius 🙏</h3>
+                        <% } else { %>
+                            <h3>Your CGPA = <%= output %> !</h3>
+                        <% } %>
+                    </div>
+                </form>
+            </div>
+            <!-- 'X' Pointer -->
+            <div class="hidden" id="calc-3-popup">
+                
+            </div>
+            <form action="/gradcal" method="post">
+                <button type="submit" onclick="closePopup()" class="close-button"><i class="fa fa-2x fa-times" aria-hidden="true"></i></button>
+            </form>
+            
+        </div> <!-- End of div.pop-up -->
+        <!-- <h1 id="gradcal-title">Grade Calculator</h1> -->
+        <div class="gradcal-hero-wo-anim" style="opacity: 1;">
+            <h2 id="gradcal-hero-title">Welcome to Grade Calculators!</h2>
+            <p id="gradcal-caption">Get your grades calculated with ease. All in one place!</p>
+            <img src="images/calculator.png" alt="student & calc" id="calc-img-wo-anim">
+        </div>
+        <div class="calc-1-description calc-description left-to-right reveal activeLR">
+            <h3 class="calc-desc-heading">GPA Calculator</h3>
+            <p id="calc-1-subcaption">Check your GPA. All we need is the credits and grade for each course.</p>
+            <button type="submit" class="display-button" id="1" onclick="openPopup(this.id)">Check your GPA</button>
+        </div>
+        <div class="calc-2-description calc-description reveal right-to-left activeRL">
+            <h3 class="calc-desc-heading">CGPA Calculator</h3>
+            <p id="calc-2-subcaption">Get to know your CGPA. Just enter the credits & GPA for this semester and the previous one.</p>
+            <button type="submit" class="display-button" id="2" onclick="openPopup(this.id)">Check your CGPA</button>
+        </div>
+        <div class="calc-3-description calc-description reveal left-to-right activeLR">
+            <h3 class="calc-desc-heading">X Pointer</h3>
+            <p id="calc-3-subcaption">Want to know what GPA you need to get to become an 'X' Pointer? Check this out...</p>
+            <button type="submit" class="display-button" id="3" onclick="openPopup(this.id)">Check to become 'X' Pointer</button>
+        </div>
+        <div class="dummy-footer" style="height: 150px;text-align: center;">FOOTER</div>
+    </div>
+    
+
+    <script src="gradcal.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Papers | Scholar Sphere</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="styles-notes.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="loader.css">
+    
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="typeWriterQP();displayContent();">
+    <%- include('navbar', {isLogin: isLogin}); %>
+    <%- include('social'); %>
+    <%- include('loader'); %>
+    <div class="navbar-padding" style="height: 8em;"></div>
+    <!-- <h1 style="padding-left: 4.5%;">Question Papers</h1> -->
+
+    <div class="qp-content">
+        <div class="qp-hero">
+            <h2 id="qp-hero-title"></h2>
+            <p id="qp-caption"></p>
+            <img src="images/home-qp.png" alt="question-papers" id="calc-img">
+        </div>
+    </div>
+
+
+    <input
+        type="text"
+        id="myInput"
+        onkeyup="myFunction()"
+        placeholder="Enter the Course Name"
+        title="Type the Course Name"
+    />
+
+    <!-- <div class="box">
+        <div class="container-2">
+            <span class="icon">
+                <i class="fa fa-search"></i>
+                <input type="text" id="myInput" class="search" placeholder="Search for courses..." onkeyup="myFunction()" autocomplete="off" title="Type a course name" />
+            </span>
+        </div>
+    </div> -->
+
+
+    <ul id="myUL">
+        <li><button onclick="window.open('/question-papers/engineering-chemistry', '_self');"> <a>Engineering Chemistry</a></button></li>
+        <li><button onclick="window.open('/question-papers/computer-programming-python', '_self');"><a>Computer Programming: Python</a></button></li>
+
+        <li><button onclick="window.open('/question-papers/basic-electrical-engineering', '_self');"><a>Basic Electrical Engineering</a></button></li>
+        <li><button onclick="window.open('/question-papers/calculus', '_self');"><a>Calculus</a></button></li>
+
+        <li><button onclick="window.open('/question-papers/structured-and-objected-oriented-programming', '_self');"><a>Structured and Object Oriented Programming</a></button></li>
+        <li><button onclick="window.open('/question-papers/basic-electronics', '_self');"><a>Basic Electronics</a></button></li>
+        <li><button onclick="window.open('/question-papers/technical-english-communication', '_self');"><a>Technical English Communication</a></button></li>
+        <li><button onclick="window.open('/question-papers/ethics-and-values', '_self');"><a>Ethics and Values</a></button></li>
+        <li><button onclick="window.open('/question-papers/differential-equations-and-transforms', '_self');"><a>Differential Equations And Transforms</a></button></li>
+        <li><button onclick="window.open('/question-papers/engineering-physics', '_self');"><a>Engineering Physics</a></button></li>
+        <li><button onclick="window.open('/question-papers/quantitative-skills', '_self');"><a>Quantitative Skills</a></button></li>
+        <li><button onclick="window.open('/question-papers/computer-programming-java', '_self');"><a>Computer Programming: Java</a></button></li>
+        <li><button onclick="window.open('/question-papers/data-structures-and-algorithms', '_self');"><a>Data Structures and Algorithms</a></button></li>
+        <li><button onclick="window.open('/question-papers/digital-systems-design', '_self');"><a>Digital Systems Design</a></button></li>
+        <li><button onclick="window.open('/question-papers/complex-variables-and-linear-algebra', '_self');"><a>Complex Variables and Linear Algebra</a></button></li>
+        <li><button onclick="window.open('/question-papers/probability-and-statistics', '_self');"><a>Probability and Statistics</a></button></li>
+        <li><button onclick="window.open('/question-papers/engineering-chemistry', '_self');"></button></li>
+    </ul>
+    <%- include('footer'); %>
+    <script src="gradcal.js"></script>
+</body>
+</html>

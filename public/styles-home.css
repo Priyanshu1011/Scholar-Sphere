@@ -1,0 +1,263 @@
+
+#greetings {
+    margin: 1% 4.5%;
+    color: #4427ac;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.slideshow-container {
+    position: relative;
+    /* background: #1c82ad; */
+  }
+  
+  /* Slides */
+  .mySlides {
+    display: none;
+    padding: 80px;
+    text-align: center;
+    animation-name: fade;
+    animation-duration: 3.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  .mySlides q {
+    font-size: 1.5rem;
+  }
+  
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 7px;
+    color: #4427ac;
+    font-weight: bold;
+    font-size: 20px;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    position: absolute;
+    right: 4rem;
+    top: 6.5rem;
+    border-radius: 5px;
+  }
+
+  .prev {
+    position: absolute;
+    left: 4rem;
+    top: 6.5rem;
+    /* border-radius: 3px 0 0 3px; */
+    border-radius: 5px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    transition: all 0.3s ease-in-out;
+    background-color: #4427ac;
+    color: #fff;
+  }
+  
+  /* The dot/bullet/indicator container */
+  .dot-container {
+      text-align: center;
+      padding: 20px;
+      /* background: #ddd; */
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #b5a1ff;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  /* Add a background color to the active dot/circle */
+  .active, .dot:hover {
+    background-color: #4427ac;
+  }
+  
+  /* Add an italic font style to all quotes */
+  q {font-style: italic;}
+  
+  /* Add a blue color to the author */
+  .author {
+    color: rgb(111, 0, 255);
+    font-size: 1.1rem;
+    padding-top: 1%;
+}
+
+/* ABOUT US */
+
+#about-us {
+    background-color: #ffffff;
+    padding: 50px 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .container h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .container p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .container li {
+    font-size: 16px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.Get-started{
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.hero-links{
+  padding-left: 5%;
+  padding-right: 1%;
+  max-width: 100%;
+}
+/*  */
+
+.image-left {
+  position: absolute;
+    top: 7%;
+    left: 1.5%;
+    width: 21%;
+    height: 96%;
+    animation: opacity 4s;
+}
+.image-right {
+  position: absolute;
+    top: 0%;
+    right: 1%;
+    width: 22%;
+    height: 105%;
+    animation: opacity 4s;
+}
+
+@keyframes opacity {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.reveal {
+  position: relative;
+  opacity: 0;
+  transition: 2s all ease;
+}
+
+.left-to-right {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.right-to-left {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.calc-description {
+  clear: left;
+  width: 94%;
+  height: 30%;
+  color: #fff;
+  background-color: #4427ac;
+  border-radius: 20px;
+  margin-top: 3%;
+  padding: 4% 3%;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.calc-2-description {
+  text-align: right;
+}
+
+.calc-desc-heading {
+  font-size: 1.4rem;
+  animation: heading-color 2.5s infinite;
+  width: 75%;
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+
+@keyframes heading-color {
+    0% {color: #fff;}
+    50% {color: #00ff44;}
+    100% {color: #fff;}
+}
+
+#calc-1-subcaption, #calc-2-subcaption, #calc-3-subcaption {
+  width: 75%;
+  display: inline-block;
+}
+
+
+/*  */
+.feature {
+  height: 10%;
+}
+
+/* #notes1{ */
+  /* padding-top: 3rem; */
+/* } */
+#notes1:hover{
+  border-color: #03c988;
+  border-radius: 10px;
+}
+/* #question-papers1{ */
+  /* padding-top: 100px; */
+/* } */
+/* #gradcal1{ */
+  /* padding-top: 100px; */
+/* } */
+/* #giveprinting{ */
+  /* padding-top: 100px; */
+/* } */
+@media screen and (max-width: 767px) {
+    h2 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 16px;
+    }
+    .container li {
+        font-size: 14px;
+    }
+}
+
+

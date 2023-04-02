@@ -1,0 +1,172 @@
+.footer_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 50vh;
+}
+/*  */
+
+.footer {
+    position: relative;
+    width: 100%;
+    background: #3586ff;
+    max-height: 85px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.social-icon,
+      .menu {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* margin: 10px 0; */
+        flex-wrap: wrap;
+        /* bottom: 150%; */
+        /* margin-left: 1rem;
+        margin-right: 1rem; */
+        /* width: 50%; */
+        margin-top: 1rem;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      .social-icon_item,
+      .menu_item {
+        list-style: none;
+        
+      }
+
+      .social-icon_link {
+        font-size: 2rem;
+        color: #fff;
+        margin: 0 10px;
+        display: inline-block;
+        transition: 0.5s;
+        /* margin-left: 30px; */
+      }
+      .social-icon_link:hover {
+        transform: translateY(-10px);
+      }
+      /*  */
+.social-icon {
+    margin-right: 2rem;
+}
+
+.menu_link {
+    font-size: 1.2rem;
+    color: #fff;
+    /* margin: 1rem 10px; */
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    /* margin-right: 2rem; */
+}
+
+.menu_link:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+#footer-notes {
+    /* margin-right: 1rem; */
+    margin-left: 5rem;
+}
+
+#footer-qp {
+    margin-left: 3.4rem;
+    /* width: 41%; */
+}
+
+/*  */
+footer {
+    margin-top: 8%;
+    margin-right: 2%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 30vh;
+}
+/*  */
+
+.footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("https://i.ibb.co/wQZVxxk/wave.png");
+    background-size: 1000px 100px;
+    /* z-index: -1; */
+}
+
+.wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+}
+
+
+@keyframes animateWaves {
+    0% {
+        background-position-x: 1000px;
+    }
+
+    100% {
+        background-positon-x: 0px;
+    }
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: -1000px;
+    }
+
+    100% {
+        background-positon-x: 0px;
+    }
+}
+
+#copyright {
+    margin-bottom: 0.1rem;
+}

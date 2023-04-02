@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Scholar Sphere</title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="styles-home.css">
+  <link rel="stylesheet" href="styles-gradcal.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="loader.css">
+
+  <!-- Google Fonts CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="displayContent();SlideHandler()"><nav class="navbar" id="navbar">
+  <div class="navbar-container nav-container">
+      <input type="checkbox" name="" id="">
+      <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+      </div>
+      <div class="logo" id="logo">
+          <a href="/">
+              <img src="images/logo.png" alt="Logo" id="logo-img">
+          </a>
+      </div>
+      <ul class="menu-items">
+          <li id="notes-nav-item"><a href="#notes1">Notes</a></li>
+          <li id="question-papers-nav-item"><a href="#question-papers1">Question Papers</a></li>
+          <li id="gradcal-nav-item"><a href="#gradcal1">Grade Calculators</a></li>
+          <li id="login-nav-item"><a href="#giveprinting">Give for printing</a></li>
+          <li id="login-nav-item"><a href="/login">Logout</a></li>
+      </ul>
+      </div>
+  </div>
+</nav>
+
+    <%- include('social'); %>
+      <%- include('loader'); %>
+        <div class="navbar-padding" style="height: 8em;"></div>
+        <!-- <h1 style="padding-left: 4.5%;">Home</h1> -->
+        <h1 id="greetings"></h1>
+
+        <div class="slideshow-container">
+          <div class="mySlides">
+            <q>Life is like a camera. Focus on the good times, develop from the negatives, and if things don't work out,
+              take another shot.</q>
+            <p class="author">- Unknown</p>
+          </div>
+          <div class="mySlides">
+            <q>Life is 10% what happens to us and 90% how we react to it. </q>
+            <p class="author">- Ernest Hemingway</p>
+          </div>
+          <div class="mySlides">
+            <q>The greatest glory in living lies not in never falling, but in rising every time we fall.</q>
+            <p class="author">- Nelson Mandela</p>
+          </div>
+          <div class="mySlides">
+            <q>Life is a journey, and if you fall in love with the journey, you will be in love forever.</q>
+            <p class="author">- Peter Hagerty</p>
+          </div>
+          <div class="mySlides">
+            <q>The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have
+              it make some difference that you have lived and lived well. </q>
+            <p class="author">- Ralph Waldo Emerson</p>
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)"></a>
+          <a class="next" onclick="plusSlides(1)"></a>
+
+        </div>
+
+        <div class="dot-container">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+
+
+        <!-- Hero Section -->
+        <div class="hero">
+          <div class="Get-started">
+            <h3>Get started</h3>
+          </div>
+          <div class="hero-links">
+            <a href="/notes" target="_blank">
+              <div class="calc-1-description calc-description" id="notes1">
+                <h3 class="calc-desc-heading">Notes</h3>
+                <p id="calc-1-subcaption">Get all your notes for various courses.</p>
+              </div>
+            </a>
+            
+            <a href="/question-papers" target="_blank">
+            <div class="calc-2-description calc-description" id="question-papers1">
+              <h3 class="calc-desc-heading">Question page</h3>
+              <p id="calc-2-subcaption">Get all previous year question papers to excel in the exam.</p>
+            </div>
+            </a>
+            <a href="/gradcal" target="_blank">
+            <div class="calc-3-description calc-description" id="gradcal1">
+              <h3 class="calc-desc-heading">Grad Calculators</h3>
+              <p id="calc-3-subcaption">Want to know your GPA, CGPA and how much GPA you need to become a 9 Pointer.
+                Then check this out...</p>
+            </div>
+            <a href="https://forms.gle/W7jLAjAExJJWfodZ7" target="_blank">
+            <div class="calc-2-description calc-description" id="giveprinting">
+              <h3 class="calc-desc-heading">Give for Printing</h3>
+              <p id="calc-2-subcaption">Want to have printouts. We got you covered. Click, upload your PDF, pay and sit back and enjoy while your printouts are getting ready! </p>
+            </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- ABOUT US -->
+        <section class="about-us">
+          <div class="container">
+            <h2>About Us</h2>
+            <p>We are a team of passionate individuals who love to create beautiful and functional websites. Our mission
+              is to help businesses succeed online by providing them with high-quality web design and development
+              services.</p>
+            <p>Our expertise includes:</p>
+            <ul>
+              <li>HTML/CSS</li>
+              <li>JavaScript</li>
+              <li>PHP</li>
+              <li>WordPress</li>
+              <li>Shopify</li>
+            </ul>
+          </div>
+        </section>
+
+        <%- include('footer'); %>
+          <script src="gradcal.js"></script>
+</body>
+
+</html>
