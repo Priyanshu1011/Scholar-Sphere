@@ -1,5 +1,7 @@
 # Scholar-Sphere
 
+Check it out here: <a href="https://scholar-sphere.onrender.com/" target="_blank">https://scholar-sphere.onrender.com/</a>
+
 ### Instructions:
 - Open the terminal in a folder to store the project
 - Run ```git clone https://github.com/Priyanshu1011/Scholar-Sphere.git```
