@@ -1,6 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const output = require(__dirname + "/showOutput.js");
 const _ = require("lodash");
 const mongoose = require("mongoose");
 const session = require("express-session");

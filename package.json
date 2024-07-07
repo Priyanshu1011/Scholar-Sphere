@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm install && node app.js"
+    "x": "node app.js",
+    "y": "npm install",
+    "build": "npm run y && npm run x"
   },
   "author": "Priyanshu Pattanaik",
   "license": "ISC",
