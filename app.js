@@ -37,7 +37,8 @@ const userSchema = new mongoose.Schema({
 const fileSchema = new mongoose.Schema({
     coursename: String, 
     moduleno: Number, 
-    fileURL: String
+    fileURL: Object,
+    youtubeURL: Object
 });
 
 // userSchema.plugin(encrypt, {secret: process.env.SECRET, encryptedFields: ["password"]});
@@ -137,9 +138,32 @@ app.get("/logout", function(req, res){
 
 app.get("/notes/:course", function(req, res){
     const courseLodash = _.startCase(req.params.course);
-    const courseName = req.params.course;
+    const courseName = req.params.course; // engineering-chemistry
+    var file_URL = [];
+    var youtubeURL = [];
+
+    // const file = new File({
+    //     coursename: String, 
+    //     moduleno: Number, 
+    //     fileURL: Object,
+    //     youtubeURL: Object
+    // });
+    File.find({coursename: courseName})
+    .then(function (file){
+        file_URL = file[0].fileURL;
+        res.render('module-page', {courseLodash: courseLodash, courseName: courseName, isLogin: isLogin, fileURL: file_URL, youtubeURL: youtubeURL});
+        // console.log(file_URL); // printing array successfully
+    })
+    .catch(function(err){
+        if(err){
+            console.log(err);
+        }
+    });
+
     // console.log(courseName);
-    res.render('module-page', {courseLodash: courseLodash, courseName: courseName, isLogin: isLogin});
+    // console.log("Outside...");
+    //console.log(file_URL); // empty array
+    // res.render('module-page', {courseLodash: courseLodash, courseName: courseName, isLogin: isLogin, fileURL: file_URL, youtubeURL: youtubeURL});
 });
 
 app.get("/question-papers/:course", function(req, res){
@@ -149,6 +173,13 @@ app.get("/question-papers/:course", function(req, res){
     const courseName = req.params.course;
     res.render('question-page', {courseLodash: courseLodash, courseName: courseName, isLogin: isLogin});
 });
+
+// app.get("/notes/:course", function(req, res){
+//     const courseLodash = _.startCase(req.params.course);
+//     const courseName = req.params.course;
+//     // console.log(courseName);
+//     res.render('module-page', {courseLodash: courseLodash, courseName: courseName, isLogin: isLogin});
+// });
 
 
 
